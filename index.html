@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<meta charset="utf-8" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<link rel="stylesheet" href="estilo.css" />
+	<script src="jogo.js"></script>
+
+
+<script>
+
+function iniciarJogo() {
+	
+	var nivel = document.getElementById('nivel').value
+
+	if (nivel === '') {
+		alert('Selecione um nível para iniciar o jogo')
+		return false
+	}
+
+//Utiliza o interrogação (?) para encaminhar os parametros. Esse tipo de coisa não é convencional de ser feito, mas faremos dessa forma aqui no momento. Há formas melhores depois.
+
+	window.location.href = "app.html?" + nivel
+}
+
+</script>
+
+</head>
+<body onresize="ajustaTamanhoPalcoJogo()">
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+
+	<!-- utilidade do bootstrap que é o flexbox(??) que funciona para centralizar o role -->
+				<div class="d-flex justify-content-center">
+
+
+				<img src="imagens/game.png" />
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+		<div class="row">
+			<div class="col">
+
+				<div class="d-flex justify-content-center">
+					<div class="mb-2"> <!-- mb de margin bottom -->
+						<select class="form-control" id="nivel">
+						<option value=""> -- Selecione o nível --</option>
+						<option value="normal"> Normal </option>
+						<option value="dificil"> Dificil </option>
+						<option value="impossivel"> Impossível </option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+
+				<div class="d-flex justify-content-center">
+
+				<button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()"> Iniciar Jogo </button>
+
+				</div>
+			</div>
+		</div>
+
+
+</body>
+</html>
